@@ -76,8 +76,10 @@ with open('ip.txt', 'w', encoding='utf-8') as file:
 
                 # IPv6 写入时用方括号包裹（例如 [2a06:...]:443），IPv4 保持原格式
                 if ip_obj.version == 6:
-                    file.write(f'[{ip_str}]:443#CF优选443\n')
+                    file.write(f'[{ip_str}]:443#CF优选IPv6-443\n')
+                    file.write(f'[{ip_str}]:2053#CF优选IPv6-2053\n')
                 else:
-                    file.write(f'{ip_str}:443#CF优选443\n')
+                    file.write(f'{ip_str}:443#CF优选IPv4-443\n')
+                    file.write(f'{ip_str}:2053#CF优选IPv4-2053\n')
 
 print('IP地址已保存到ip.txt文件中。')
