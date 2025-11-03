@@ -36,14 +36,11 @@ jobs:
         with:
           name: ip-txt
           path: ip.txt
-
-      # 可选：如果你希望把生成的 ip.txt 提交回仓库
-      # 取消下面步骤的注释（保持前面的 permissions: contents: write）
-      #
-      # - name: Commit ip.txt back to repository
-      #   run: |
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     git add ip.txt
-      #     git commit -m "Update ip.txt from scheduled workflow" || echo "No changes to commit"
-      #     git push
+          
+      - name: Commit ip.txt back to repository
+        run: |
+           git config user.name "github-actions[bot]"
+           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+           git add ip.txt
+           git commit -m "Update ip.txt from scheduled workflow" || echo "No changes to commit"
+           git push
