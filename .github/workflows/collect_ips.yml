@@ -1,9 +1,8 @@
 name: collect-ips
 
 on:
-  # 每 12 小时执行一次（UTC）。这是在 0:00, 12:00 UTC 运行。
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */3 * * *'  # 每3小时运行一次
   # 允许手动触发以便测试
   workflow_dispatch:
 
